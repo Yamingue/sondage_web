@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "es6",
+        "moduleResolution": "node",
+        "declaration": false,
+        "noImplicitAny": true,
+        "jsx": "react-jsx",
+        "sourceMap": true,
+        "noLib": false,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+    },
+    "include": ["assets"],
+    "exclude": [
+        "node_modules",
+        "public/build"
+    ]
+}
