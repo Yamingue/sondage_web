@@ -30,6 +30,8 @@
     },
     "dependencies": {
         "@react-google-maps/api": "^2.20.6",
-        "react-toastify": "^11.0.5"
+        "react-toastify": "^11.0.5",
+        "sweetalert2": "^11.21.0",
+        "sweetalert2-react-content": "^5.1.0"
     }
 }

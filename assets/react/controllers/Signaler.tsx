@@ -1,9 +1,12 @@
 import { GoogleMap, LoadScript, Marker, Autocomplete } from "@react-google-maps/api";
 import { useState, useEffect, useRef, ChangeEvent } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const GOOGLE_MAPS_API_KEY: string = "AIzaSyCQwQBdz0VW-SupCGwD3gE7niI3uxaw1dc"; // Remplace par ton API Key
 
+const MySwal = withReactContent(Swal);
 const containerStyle: React.CSSProperties = {
     width: "100%",
     height: "500px",
@@ -100,7 +103,7 @@ const MapComponent: React.FC = ({ quartier }: SignalProps) => {
                     <form onSubmit={(ev) => {
                         ev.preventDefault();
                         let data = new FormData();
-                        setSending(old=>true)
+                        setSending(old => true)
                         data.append("categorie", formData.categorie);
                         data.append("description", formData.description);
                         data.append("quartier", formData.quartier);
@@ -113,9 +116,15 @@ const MapComponent: React.FC = ({ quartier }: SignalProps) => {
                             method: "POST",
                             body: data,
                         }).then(d => d.json()).then(d => {
-                            setSending(old=>false)
+                            setSending(old => false)
                             if (d.code === 200) {
-                                toast.success("Signalement envoyé avec succès, ID: " + d.id);
+                                MySwal.fire({
+                                    title: <p>Succès !</p>,
+                                    text: "Signalement envoyé avec succès, votre ID de suivi est : " + d.id,    
+                                    icon: "success",
+                                    timer: 10000,
+                                    showConfirmButton: true,
+                                });
                                 setFormData({
                                     categorie: "",
                                     description: "",
@@ -124,6 +133,13 @@ const MapComponent: React.FC = ({ quartier }: SignalProps) => {
                                     photo: null,
                                 });
                             } else {
+                                MySwal.fire({
+                                    title: <p>Erreur !</p>,
+                                    text: "Erreur lors de l'envoi du signalement",
+                                    icon: "error",
+                                    timer: 5000,
+                                    showConfirmButton: false,
+                                });
                                 toast.error("Erreur lors de l'envoi du signalement");
                             }
                         })
