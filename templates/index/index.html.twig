@@ -52,11 +52,11 @@
     }
 
     @keyframes marquee {
-      from {
+      0% {
         transform: translateX(0%);
       }
-      to {
-        transform: translateX(-100%);
+      100% {
+        transform: translateX(-50%);
       }
       
     }
@@ -76,7 +76,15 @@
   {% include "includes/header.html.twig" %}
 
   <main class="main">
-
+    <section>
+      <div class="marquee-container">
+        <div class="marquee-content">
+          <img src="/partenaire/acra.jpg" alt="acra">
+          <img src="/partenaire/aid.png" alt="aid">
+          <img src="/partenaire/tc.png" alt="td aid">
+        </div>
+      </div>
+    </section>
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
@@ -103,17 +111,9 @@
       </div>
 
     </section><!-- /Hero Section -->
-    <section>
-      <div class="marquee-container">
-        <div class="marquee-content">
-          <img src="/partenaire/acra.jpg" alt="acra">
-          <img src="/partenaire/aid.png" alt="aid">
-          <img src="/partenaire/tc.png" alt="td aid">
-        </div>
-      </div>
-    </section>
+
     <!-- Featured Services Section -->
-    <section id="featured-services" class="featured-services section">
+    {# <section id="featured-services" class="featured-services section">
 
       <div class="container">
 
@@ -147,7 +147,7 @@
 
       </div>
 
-    </section>
+    </section> #}
     <!-- /Featured Services Section -->
 
     <!-- About Section -->
