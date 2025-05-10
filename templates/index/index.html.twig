@@ -31,6 +31,36 @@
   {% block stylesheets %}
   {{ encore_entry_link_tags('app') }}
   {% endblock %}
+
+    <style>
+    .marquee-container {
+      overflow: hidden;
+      position: relative;
+      background: #f8f9fa;
+      height: 100px;
+    }
+
+    .marquee-content {
+      display: flex;
+      animation: marquee 10s linear infinite;
+    }
+
+    .marquee-content img {
+      height: 80px;
+      margin: 0 30px;
+      object-fit: contain;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+      
+    }
+  </style>
 </head>
 
 <!-- =======================================================
@@ -43,7 +73,7 @@
 </head>
 
 <body class="index-page">
-{% include "includes/header.html.twig" %}
+  {% include "includes/header.html.twig" %}
 
   <main class="main">
 
@@ -73,9 +103,17 @@
       </div>
 
     </section><!-- /Hero Section -->
-
+    <section>
+      <div class="marquee-container">
+        <div class="marquee-content">
+          <img src="/partenaire/acra.jpg" alt="acra">
+          <img src="/partenaire/aid.png" alt="aid">
+          <img src="/partenaire/tc.png" alt="td aid">
+        </div>
+      </div>
+    </section>
     <!-- Featured Services Section -->
-    {# <section id="featured-services" class="featured-services section">
+    <section id="featured-services" class="featured-services section">
 
       <div class="container">
 
@@ -109,7 +147,7 @@
 
       </div>
 
-    </section> #}
+    </section>
     <!-- /Featured Services Section -->
 
     <!-- About Section -->
