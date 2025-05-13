@@ -30,6 +30,7 @@ class Quartier
     #[ORM\OneToMany(targetEntity: Alert::class, mappedBy: 'quartier', orphanRemoval: true)]
     private Collection $alerts;
 
+
     public function __construct()
     {
         $this->alerts = new ArrayCollection();

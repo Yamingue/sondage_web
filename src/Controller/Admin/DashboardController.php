@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Alert;
 use App\Entity\Quartier;
+use App\Entity\Rapport;
 use App\Entity\User;
 use Symfony\Component\HttpFoundation\Response;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -51,6 +52,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Quartiers', 'fas fa-list', Quartier::class);
         yield MenuItem::linkToCrud('Alerts', 'fas fa-list', Alert::class);
+        yield MenuItem::linkToCrud('Rapports', 'fas fa-list', Rapport::class);
         yield MenuItem::linkToCrud('Utiisateurs', 'fas fa-list', User::class)
             ->setPermission('ROLE_ADMIN');
     }
