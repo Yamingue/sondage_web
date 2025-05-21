@@ -32,35 +32,6 @@
   {{ encore_entry_link_tags('app') }}
   {% endblock %}
 
-    <style>
-    .marquee-container {
-      overflow: hidden;
-      position: relative;
-      background: #f8f9fa;
-      height: 100px;
-    }
-
-    .marquee-content {
-      display: flex;
-      animation: marquee 10s linear infinite;
-    }
-
-    .marquee-content img {
-      height: 80px;
-      margin: 0 30px;
-      object-fit: contain;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-      
-    }
-  </style>
 </head>
 
 <!-- =======================================================
@@ -76,15 +47,6 @@
   {% include "includes/header.html.twig" %}
 
   <main class="main">
-    <section>
-      <div class="marquee-container">
-        <div class="marquee-content">
-          <img src="/partenaire/acra.jpg" alt="acra">
-          <img src="/partenaire/aid.png" alt="aid">
-          <img src="/partenaire/tc.png" alt="td aid">
-        </div>
-      </div>
-    </section>
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
@@ -184,7 +146,7 @@
                 <i class="bi bi-check2-all"></i> <span>Prendre en photo si possible.</span>
               </li>
               {# <li>
-                <i class="bi bi-check2-all"></i> 
+                <i class="bi bi-check2-all"></i>
                 <span>Appeler le {{getenv('FREE_TEL')}} ou signaler le directement ici.</span>
               </li> #}
               <li>
@@ -277,7 +239,7 @@
               {# <div class="icon">
                 <i class="bi bi-activity"></i>
               </div> #}
-              <span  class="stretched-link">
+              <span class="stretched-link">
                 <h3>Le conteneur est plein</h3>
               </span>
               <p>
@@ -484,9 +446,28 @@
 
     </section> #}
     <!-- /Testimonials Section -->
+    <section class="py-5 bg-light text-center">
+      <div class="container">
+        <h2 class="mb-4">Nos Partenaires</h2>
+        <div class="row justify-content-center align-items-center">
+          <!-- Logo 1 -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+            <img src="/partenaire/logo1.png" alt="Partenaire 1" class="img-fluid" style="max-height: 80px;">
+          </div>
+          <!-- Logo 2 -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+            <img src="/partenaire/logo2.png" alt="Partenaire 2" class="img-fluid" style="max-height: 80px;">
+          </div>
+          <!-- Logo 4 -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+            <img src="/partenaire/logo3.png" alt="Partenaire 4" class="img-fluid" style="max-height: 80px;">
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section accent-background">
+    {# <section id="call-to-action" class="call-to-action section accent-background">
 
       <div class="container">
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
@@ -505,7 +486,8 @@
         </div>
       </div>
 
-    </section><!-- /Call To Action Section -->
+    </section> #}
+    <!-- /Call To Action Section -->
 
     <!-- Contact Section -->
     {# <section id="contact" class="contact section">
