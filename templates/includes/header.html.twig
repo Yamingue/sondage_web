@@ -1,23 +1,23 @@
-
 <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="/" class="d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img style="width: 100px;" src="/logo.png" alt=""> 
-        {# <h1 class="sitename">{{getenv('SITE_NAME')}}</h1> #}
-      </a>
+    <a href="/" class="d-flex align-items-center me-auto">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <img style="width: 100px;" src="/logo.png" alt="">
+      {# <h1 class="sitename">{{getenv('SITE_NAME')}}</h1> #}
+    </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="/" class="active">Accueil</a></li>
-          <li><a href="{{path('suivi')}}">Suivre</a></li>
-          <li><a href="{{path('app_about')}}">à propos</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/" {% if app.request.get('_route')=='app_index' %} class="active" {% endif %}>Accueil</a></li>
+        <li><a href="{{path('suivi')}}" {% if app.request.get('_route')=='suivi' %} class="active" {% endif
+            %}>Suivre</a></li>
+        <li><a href="{{path('app_about')}}"   {% if app.request.get('_route')== 'app_about' %}class="active"{% endif %} >à propos</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
 
-      <a class="btn-getstarted" href="{{path('signaler')}}">Signaler</a>
+    <a class="btn-getstarted" href="{{path('signaler')}}">Signaler</a>
 
-    </div>
-  </header>
+  </div>
+</header>
