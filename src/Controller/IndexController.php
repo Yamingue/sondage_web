@@ -28,6 +28,14 @@ final class IndexController extends AbstractController
         ]);
     }
 
+    #[Route('/about', name: 'app_about')]
+    public function about(): Response
+    {
+        return $this->render('index/about.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
+
     #[Route('/suivi', name: 'suivi')]
     public function suivi(Request $request, AlertRepository $alertRepository): Response
     {
@@ -54,7 +62,7 @@ final class IndexController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
             $alert = $alertRepository->find($data['id']);
-            if (!$alert)  {
+            if (!$alert) {
                 $this->addFlash('error', 'Aucune alerte trouvée avec ce code');
             }
         }

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{{getenv('SITE_NAME')}}</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    <style>
+        p {
+            text-align: justify;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            background-color: #f08520;
+            color: azure;
+        }
+        h5{
+            color: #491b9e;
+        }
+    </style>
+</head>
+
+<!-- =======================================================
+  * Template Name: eNno
+  * Template URL: https://bootstrapmade.com/enno-free-simple-bootstrap-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+    {% include "includes/header.html.twig" %}
+
+    <main class="main">
+
+
+        <!-- Featured Services Section -->
+        <section id="featured-services" class="featured-services section">
+            <div class="container">
+                <h3>LE SYSTEME MOPANDJ</h3>
+                <p>
+                    En avril 2023, un Plan de Contingence Communal a été élaboré au niveau de la ville de N'Djamena pour
+                    répondre aux crises alimentaires et climatiques affectant sa population. Le Plan a été élaboré dans
+                    le cadre du projet « Nourrir la ville : Programme intégré pour une alimentation suffisante et de
+                    qualité pour les populations réfugiées et autochtones du 1er arrondissement de N'Djamena » AID12398,
+                    implémenté par ACRA en partenariat avec la Mairie de N'Djamena, et il a été validé le 13 juin 2023
+                    lors de la IIIème Session du Comité de Pilotage des Politiques Alimentaires Urbaines (CPPAU) de la
+                    Ville de N'Djamena.
+                </p>
+                <p>
+                    En continuité avec ce partenariat, ACRA a prévu la mise des certaines actions prioritaires du Plan
+                    de Contigence.
+                </p>
+                <p>
+                    A ce propos, la mise en œuvre d'un système pilote d'alerte a été réalisée dans le 9ème
+                    arrondissement, afin de renforcer les capacités de prévention et de gestion des problèmes liés à
+                    l'assainissement et aux déchets dans les quartiers cibles.
+                </p>
+                <p>
+                    Le site web www.mopandj.com a été réalisé pour permettre aux citoyens de signaler des problèmes liés
+                    à l'assainissement et à la gestion des ordures solides et liquides dans leurs quartiers et de mettre
+                    en place un système de priorisation et résolution de ces alertes.
+                    L'action est mise en œuvre en collaboration avec les entités publiques et les OSC communautaires
+                    afin de répondre aux besoins locaux et en assurer la durabilité.
+                </p>
+                <h5>
+                    Partenariat impliqués :
+                </h5>
+                <p>
+                    Commune du 9eme arrondissement <br>
+                    OSCs communautaires : ATPAD, Je respect ma ville, ACD
+                    <img src="" alt="">
+                </p>
+
+                <h3>LE PROJET AID 012633</h3>
+                <p>
+                    Cette expérience s'inscrit dans le cadre du projet :
+
+                    Une stratégie durable pour les populations vulnérables de N'Djamena : actions multisectorielles pour
+                    prévenir les crises alimentaires et climatiques
+                    AID 012633
+                </p>
+                <h5>OBJECTIF GENERAL :</h5>
+                <p>
+                    Contribuer à l'amélioration des niveaux alimentaires et nutritionnels ainsi qu'aux stratégies de
+                    réponse aux crises contingentes et structurelles de la population vulnérable de la ville de
+                    N'Djamena
+                </p>
+                <h5>
+                    OBJECTIF SPECIFIQUE :
+                </h5>
+                <p>
+                    Renforcer les capacités de résilience à l'insécurité alimentaire et nutritionnelle ainsi que de
+                    prévention des effets des chocs agro-climatiques de la population de N'Djamena, en mettant
+                    particulièrement l'accent sur les réfugiés centrafricains et les populations vulnérables
+                </p>
+                <h5>ZONE D'INTERVENTION : </h5>
+                <p>7°, 8° et 9° arrondissements de la ville de N'Djamena</p>
+                <h5>RESULTATS : </h5>
+                <p>
+                    <b>Résultat 1</b> - Le Plan de Contingence Communal de la ville de N'Djamena contre les crises
+                    alimentaires est diffusé pour sensibiliser sur les actions de prévention et gestion des risques et
+                    un centre d'alerte pour la gestion des crises est mis en place.
+                    <br>
+                    <b>Résultat 2</b> - 4 centres de santé et 3 écoles sont sensibilisés et équipés d'outils et de
+                    compétences pour la prévention et prise en charge de la malnutrition chez la population féminine et
+                    les enfants.
+                    <br>
+                    <b>Résultat 3</b> - 3 groupes de producteurs et productrices sont soutenus à travers des formations
+                    et des outils pour améliorer leurs compétences agro-écologiques pour des productions innovantes et
+                    résilientes.
+
+                </p>
+                <h5>
+                    BENEFICIAIRES DIRECTS :
+                </h5>
+                <p>
+                    416 femmes vulnérables (tchadiennes, déplacées, retournées, réfugiées) <br>
+                    45 membres du personnel sanitaire de 4 centres de santé <br>
+                    4908 enfants (50% filles) fréquentant 4 écoles primaires, dont 330 réfugiés et 263 retournés
+                    45 enseignants/directeurs <br>
+                    50 membres des 3 APE et 2 AME <br>
+                    183 membres de 3 groupes de producteurs/trices, dont 63 femmes tchadiennes et 20 femmes réfugiées
+                    <br>
+                    43 fonctionnaires de la Commune de N'Djamena et de ses arrondissements
+                </p>
+                <H3>PARTENARIAT</H3>
+                <p>
+                    La Mairie de N'Djamena est partenaire du projet « Une stratégie durable pour les populations
+                    vulnérables de N'Djamena : actions multisectorielles pour prévenir les crises alimentaires et
+                    climatiques ». Elle est engagée dans le développement des systèmes alimentaires urbains sains et
+                    durables. Elle figure parmi les signataires du Pacte de Milan sur les politiques alimentaires
+                    urbaines (MUFPP) et elle est membre actif du réseau des villes africaines qui ont adhéré au Pacte.
+                </p>
+                <h3>PACTE DE MILAN</h3>
+                <p>
+                    Ce projet s'inscrit dans le cadre du Pacte de Milan sur les Politiques Alimentaires Urbaines (Milan
+                    Urban Food Policy Pact - MUFPP). Le Pacte regroupe aujourd'hui 211 villes dans le monde engagées
+                    pour le développement de systèmes alimentaires sains et durables en milieu urbain. La ville de
+                    N'Djamena, accompagnée par ACRA, adhère au Pacte de Milan depuis 2015 et elle a participé activement
+                    aux rencontres régionales et internationales des villes signataires dans le but de soutenir les
+                    actions recommandées par le Pacte pour l'introduction des politiques urbaines durables.
+                </p>
+                <H3>
+                    ACRA
+                </H3>
+                <p>
+                    est une ONG laïque et indépendante présente au Tchad dès sa création en 1968. Elle est engagée
+                    depuis plus de 50 ans dans la lutte contre la pauvreté et le soutien à la souveraineté alimentaire,
+                    la promotion de l'éducation et la protection de l'enfant, la préservation de l'environnement et des
+                    ressources naturelles et la défense des droits humains. ACRA travaille en étroite collaboration avec
+                    les organisations de la société civile (OSC), les autorités et les populations locales pour
+                    promouvoir des solutions durables, participatives et inclusives.
+                </p>
+            </div>
+
+        </section><!-- /Featured Services Section -->
+
+    </main>
+
+    {% include "includes/footer.html.twig" %}
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
