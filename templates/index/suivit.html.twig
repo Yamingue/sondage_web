@@ -120,7 +120,11 @@
                                     Photo :
                                 </th>
                                 <td>
-                                    <img src="{{asset(alert.photo)}}" alt="photo" class="img-fluid">
+                                    {% if alert.photo %}
+                                        <img src="{{asset(alert.photo)}}" alt="photo" class="img-fluid">
+                                    {% else %}
+                                        <img src="https://placehold.co/400" alt="photo" class="img-fluid">
+                                    {% endif %}
                                 </td>
                             </tr>
                         </tbody>
