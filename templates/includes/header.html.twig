@@ -12,7 +12,20 @@
         <li><a href="/" {% if app.request.get('_route')=='app_index' %} class="active" {% endif %}>Accueil</a></li>
         <li><a href="{{path('suivi')}}" {% if app.request.get('_route')=='suivi' %} class="active" {% endif
             %}>Suivre</a></li>
-        <li><a href="{{path('app_about')}}"   {% if app.request.get('_route')== 'app_about' %}class="active"{% endif %} >à propos</a></li>
+        {# <li>
+          <a href="{{path('app_about')}}" {% if app.request.get('_route')=='app_about' %}class="active" {% endif %}>
+            à propos
+          </a>
+        </li> #}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {% if 'about' in app.request.get('_route') %}active {% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            à propos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item {% if app.request.get('_route')=='about_project' %}active text-white{% endif %}" href="{{path('about_project')}}" >Le projet</a></li>
+            <li><a class="dropdown-item {% if app.request.get('_route')=='about_app' %}active text-white{% endif %}" href="{{path('about_app')}}" >Le système MOPANDJ</a></li>
+          </ul>
+        </li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
