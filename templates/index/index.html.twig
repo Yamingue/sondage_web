@@ -32,6 +32,29 @@
   {{ encore_entry_link_tags('app') }}
   {% endblock %}
 
+  <style>
+    .step-icon {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .step-icon img {
+      max-height: 100px;
+      width: auto;
+    }
+
+    .step {
+      border-left: 4px solid orange;
+      padding-left: 20px;
+      margin-bottom: 30px;
+      background-color: #fff;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
 </head>
 
 <!-- =======================================================
@@ -127,19 +150,61 @@
       </div><!-- End Section Title -->
 
       <div class="container">
+        {% include "includes/how.html.twig" %}
+        {# <div class="row g-4">
 
-        <div class="row gy-4">
+          <div class="col-md-6 step">
+            <div class="step-icon">
+              <img src="/image1.png" alt="Citoyen signale un problème">
+            </div>
+            <p>Pour signaler un problème le citoyen accède au site web <a href="www.mopandj.com">www.mopandj.com</a></p>
+          </div>
+
+          <div class="col-md-6 step">
+            <div class="step-icon">
+              <img src="/image2.jpg" alt="Centre d'alerte">
+            </div>
+            <p>Il sélectionne la catégorie du problème d'assainissement à signaler et le quartier où il se trouve.</p>
+          </div>
+
+          <div class="col-md-6 step">
+            <div class="step-icon">
+              <img src="/image3.jpg" alt="OSC informée">
+            </div>
+            <p>
+              Dans le centre d'alerte, la Commune du 9ème arrondissement et les OSC reçoivent l'alerte et ils préparent
+              la prise en en charge du problème.
+            </p>
+          </div>
+
+          <div class="col-md-6 step">
+            <div class="step-icon">
+              <img src="/image4.jpg" alt="Agents interviennent">
+            </div>
+            <p>Selon les alertes priorisées, une équipe des agents responsables se déplace sur le site pour résoudre le
+              problème. </p>
+          </div>
+
+          <div class="col-12 step">
+            <div class="step-icon">
+              <img src="/image5.jpg" alt="Mise à jour du site">
+            </div>
+            <p>Le citoyen peut suivre l'avancement de son alerte selon son état de résolution.</p>
+          </div>
+
+        </div> #}
+        {# <div class="row gy-4">
           <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
             <img src="/images/trash2.png" class="img-fluid" alt="">
-            {# <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a> #}
+            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
           </div>
           <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-            {# <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3> #}
-            {# <p class="fst-italic">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <p class="fst-italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore
               magna aliqua.
-            </p> #}
+            </p>
             <ul>
               <li>
                 <i class="bi bi-check2-all"></i> <span>Identifier le problème</span>
@@ -147,10 +212,10 @@
               <li>
                 <i class="bi bi-check2-all"></i> <span>Prendre en photo si possible.</span>
               </li>
-              {# <li>
+              <li>
                 <i class="bi bi-check2-all"></i>
                 <span>Appeler le {{getenv('FREE_TEL')}} ou signaler le directement ici.</span>
-              </li> #}
+              </li>
               <li>
                 <i class="bi bi-check2-all"></i> <span>Nous recevons l'alerte</span>
               </li>
@@ -162,13 +227,13 @@
                   traitement</span>
               </li>
             </ul>
-            {# <p>
+            <p>
               Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
               voluptate
               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-            </p> #}
+            </p>
           </div>
-        </div>
+        </div> #}
 
       </div>
 

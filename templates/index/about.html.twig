@@ -55,7 +55,7 @@
             font-weight: bold;
         }
     </style>
-       <style>
+    <style>
       .step-icon {
         margin-bottom: 10px;
         text-align: center;
@@ -151,7 +151,8 @@
                     OSCs communautaires : ACD, ATPAD, Je respect ma ville
                 </p>
                 <H3>Comment ça marche</H3>
-                <div class="row g-4">
+                {% include "includes/how.html.twig" %}
+                {# <div class="row g-4">
 
                     <div class="col-md-6 step">
                         <div class="step-icon">
@@ -190,7 +191,7 @@
                         <p>Le citoyen peut suivre l'avancement de son alerte selon son état de résolution.</p>
                     </div>
 
-                </div>
+                </div> #}
                 {# <img class="img-fluid" src="/Work.png" alt=""> #}
 
             </div>
