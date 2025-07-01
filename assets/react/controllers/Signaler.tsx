@@ -54,7 +54,7 @@ const MapComponent: React.FC = ({ quartier }: SignalProps) => {
         "Déchets à l'extérieur du conteneur",
         "Poubelle informelle",
         "Conteneur en feu",
-        "Des ordures dans le fossé",
+        "Ordures dans le fossé",
 
     ]
 
