@@ -495,7 +495,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown ul.dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -1754,3 +1754,27 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Sélectionne tous les liens de dropdown dans le menu mobile
+  document.querySelectorAll('.navmenu .dropdown > a').forEach(function (dropdownLink) {
+    dropdownLink.addEventListener('click', function (e) {
+      // Seulement sur mobile
+      if (window.innerWidth < 1200) {
+        e.preventDefault();
+        const parent = this.parentElement;
+        // Ferme les autres dropdowns ouverts
+        document.querySelectorAll('.navmenu .dropdown').forEach(function (el) {
+          if (el !== parent) {
+            el.querySelector('ul').classList.remove('dropdown-active');
+          }
+        });
+        // Toggle le dropdown courant
+        const submenu = parent.querySelector('ul');
+        if (submenu) {
+          submenu.classList.toggle('dropdown-active');
+        }
+      }
+    });
+  });
+});

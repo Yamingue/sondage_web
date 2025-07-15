@@ -40,7 +40,7 @@
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
+        // mobileNavToogle();
       }
     });
 
@@ -205,5 +205,29 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Sélectionne tous les liens de dropdown dans le menu mobile
+    document.querySelectorAll('.navmenu .dropdown > a').forEach(function (dropdownLink) {
+      dropdownLink.addEventListener('click', function (e) {
+        // Seulement sur mobile
+        if (window.innerWidth < 1200) {
+          e.preventDefault();
+          const parent = this.parentElement;
+          // Ferme les autres dropdowns ouverts
+          document.querySelectorAll('.navmenu .dropdown').forEach(function (el) {
+            if (el !== parent) {
+              el.querySelector('ul').classList.remove('dropdown-active');
+            }
+          });
+          // Toggle le dropdown courant
+          const submenu = parent.querySelector('ul');
+          if (submenu) {
+            submenu.classList.toggle('dropdown-active');
+          }
+        }
+      });
+    });
+  });
 
 })();
